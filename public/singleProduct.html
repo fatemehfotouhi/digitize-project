@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Product</title>
+    <link rel="stylesheet" href="./build/tailwind.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<body class="bg-gray-100">
+    <!---------app bar----------->
+    <div class="flex items-center justify-between mt-10 px-4 text-blue-900 mb-6 md:hidden">
+        <div class="bg-white rounded cursor-pointer shadow-lg flex items-center justify-center w-7 h-7">
+            <svg xmlns="httpclass=" w-4 h-4 stroke-blue-900" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+        </div>
+        <div>گوشی آیفون ۱۳ ۱۲۸ گیگابایت</div>
+        <div class="bg-white rounded cursor-pointer shadow-lg flex items-center justify-center w-7 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+        </div>
+    </div>
+
+    <!-----------navbar section in desktop--------------->
+    <nav class="hidden md:block bg-white shadow-lg sticky top-0 z-10 mb-8">
+        <div class="flex items-center justify-between px-3 container mx-auto max-w-screen-xl">
+            <ul class="flex items-center md:gap-x-1 lg:gap-x-4 text-blue-900 font-medium lg:text-lg">
+                <li>
+                    <a href="#" class="md:px-2 md:py-4 cursor-pointer">
+                        <img src="../assets/images/Logo.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="md:px-2 md:py-4 hover:bg-gray-50 rounded-md transition-all duration-500 cursor-pointer">خانه</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="md:px-2 md:py-4 hover:bg-gray-50 rounded-md transition-all duration-500 cursor-pointer">تلفن
+                        همراه</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="md:px-2 md:py-4 hover:bg-gray-50 rounded-md transition-all duration-500 cursor-pointer">لپ
+                        تاپ</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="md:px-2 md:py-4 hover:bg-gray-50 rounded-md transition-all duration-500 cursor-pointer">ساعت
+                        هوشمند</a>
+                </li>
+            </ul>
+            <div class="flex-1 max-w-xl mr-4">
+                <div class="flex items-center bg-gray-100 p-4 rounded-md">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                    </span>
+                    <input type="text" placeholder="جستجوی  نام محصول، نام برند، نام مدل و..."
+                        class="bg-transparent w-full outline-none px-2 mr-2 lg:text-lg text-slate-800-900">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-----bread crumbs----------->
+    <div class="flex items-center px-4 gap-x-2 text-sm mb-5 md:hidden">
+        <span class="text-orange-500">تلفن همراه</span>
+        <span class="text-blue-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="10" fill="none">
+                <path stroke="#222F5D"
+                    d="m.945 4.2.006-.006.006-.007c.369-.406 1.067-.973 1.831-1.502.763-.53 1.537-.984 2.042-1.187l.01-.004c.067-.029.2-.079.341-.123a1.72 1.72 0 0 1 .3-.071c.13.002.253.031.375.092a.812.812 0 0 1 .33.377c.02.056.057.198.093.363a11.189 11.189 0 0 1 .054.253l.006.034c.1.558.161 1.502.161 2.575 0 1-.057 1.899-.14 2.48a1.34 1.34 0 0 0-.007.034l-.018.087v.002c-.013.07-.031.159-.052.254a4.92 4.92 0 0 1-.099.382.671.671 0 0 1-.012.033l-.004.01a.75.75 0 0 1-.66.424H5.48a.983.983 0 0 1-.155-.031 3.398 3.398 0 0 1-.36-.12l-.226-.095c-.482-.206-1.233-.646-1.978-1.16-.746-.516-1.436-1.07-1.814-1.491L.94 5.794l-.008-.008-.001-.001-.007-.007L.9 5.752a5.486 5.486 0 0 1-.084-.09 2.22 2.22 0 0 1-.164-.195l-.006-.008L.64 5.45a.749.749 0 0 1-.14-.446c0-.185.053-.348.144-.478l.074-.081.039-.044c.058-.065.125-.138.188-.202Z" />
+            </svg>
+        </span>
+        <span class="text-orange-500">برند آیفون</span>
+        <span class="text-blue-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="10" fill="none">
+                <path stroke="#222F5D"
+                    d="m.945 4.2.006-.006.006-.007c.369-.406 1.067-.973 1.831-1.502.763-.53 1.537-.984 2.042-1.187l.01-.004c.067-.029.2-.079.341-.123a1.72 1.72 0 0 1 .3-.071c.13.002.253.031.375.092a.812.812 0 0 1 .33.377c.02.056.057.198.093.363a11.189 11.189 0 0 1 .054.253l.006.034c.1.558.161 1.502.161 2.575 0 1-.057 1.899-.14 2.48a1.34 1.34 0 0 0-.007.034l-.018.087v.002c-.013.07-.031.159-.052.254a4.92 4.92 0 0 1-.099.382.671.671 0 0 1-.012.033l-.004.01a.75.75 0 0 1-.66.424H5.48a.983.983 0 0 1-.155-.031 3.398 3.398 0 0 1-.36-.12l-.226-.095c-.482-.206-1.233-.646-1.978-1.16-.746-.516-1.436-1.07-1.814-1.491L.94 5.794l-.008-.008-.001-.001-.007-.007L.9 5.752a5.486 5.486 0 0 1-.084-.09 2.22 2.22 0 0 1-.164-.195l-.006-.008L.64 5.45a.749.749 0 0 1-.14-.446c0-.185.053-.348.144-.478l.074-.081.039-.044c.058-.065.125-.138.188-.202Z" />
+            </svg>
+        </span>
+        <span class="text-gray-500">آیفون ۱۳</span>
+    </div>
+
+    <!-------single product in desktop------->
+    <div
+        class="container mx-auto max-w-screen-xl px-4 grid grid-cols-12 gap-y-6 gap-x-4 md:px-2  md:grid-rows-[55px_minmax(500px,_1fr)] mb-8">
+        <!------sidebar in desktop ------>
+        <div class="hidden md:block col-span-4 lg:col-span-3 row-span-2">
+            <div class="bg-white rounded-xl p-6 max-h-[calc(100vh_-_130px)] sticky overflow-auto top-24">
+                <!--------- categories-------->
+                <div class="mb-6">
+                    <p class="text-orange-400 font-bold lg:text-lg mb-6">دسته بندی‌</p>
+                    <ul x-data="{activeTab:1,activeClass:'text-blue-900'}" class="text-gray-400 lg:text-lg">
+                        <li @click="activeTab=1" :class="activeTab===1 ? activeClass : '' ">
+                            <a href="#" class="flex items-center py-3 px-2 cursor-pointer hover:bg-gray-50">
+                                <span class="rounded-full w-7 h-7 bg-gray-200 relative ml-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-9 h-6 absolute top-2 right-0.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                                    </svg>
+                                </span>
+                                <span>تلفن همراه</span>
+                            </a>
+                        </li>
+                        <li @click="activeTab=2" :class="activeTab===2 ? activeClass : '' ">
+                            <a href="#" class="flex items-center py-3 px-2 cursor-pointer hover:bg-gray-50">
+                                <span class="rounded-full w-7 h-7 bg-gray-200 relative ml-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute top-2 right-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                                    </svg>
+                                </span>
+                                <span>لپ تاپ</span>
+                            </a>
+                        </li>
+                        <li @click="activeTab=3" :class="activeTab===3 ? activeClass : '' ">
+                            <a href="#" class="flex items-center py-3 px-2 cursor-pointer hover:bg-gray-50">
+                                <span class="rounded-full w-7 h-7 bg-gray-200 relative ml-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-6 h-6 absolute top-2 right-1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </span>
+                                <span>ساعت هوشمند</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!------------ sort in desktop------------>
+        <div class="hidden md:block col-span-8 lg:col-span-9">
+            <div class="flex items-center p-4 gap-x-2 bg-white rounded-xl text-sm mb-5">
+                <span class="text-orange-500">تلفن همراه</span>
+                <span class="text-blue-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="10" fill="none">
+                        <path stroke="#222F5D"
+                            d="m.945 4.2.006-.006.006-.007c.369-.406 1.067-.973 1.831-1.502.763-.53 1.537-.984 2.042-1.187l.01-.004c.067-.029.2-.079.341-.123a1.72 1.72 0 0 1 .3-.071c.13.002.253.031.375.092a.812.812 0 0 1 .33.377c.02.056.057.198.093.363a11.189 11.189 0 0 1 .054.253l.006.034c.1.558.161 1.502.161 2.575 0 1-.057 1.899-.14 2.48a1.34 1.34 0 0 0-.007.034l-.018.087v.002c-.013.07-.031.159-.052.254a4.92 4.92 0 0 1-.099.382.671.671 0 0 1-.012.033l-.004.01a.75.75 0 0 1-.66.424H5.48a.983.983 0 0 1-.155-.031 3.398 3.398 0 0 1-.36-.12l-.226-.095c-.482-.206-1.233-.646-1.978-1.16-.746-.516-1.436-1.07-1.814-1.491L.94 5.794l-.008-.008-.001-.001-.007-.007L.9 5.752a5.486 5.486 0 0 1-.084-.09 2.22 2.22 0 0 1-.164-.195l-.006-.008L.64 5.45a.749.749 0 0 1-.14-.446c0-.185.053-.348.144-.478l.074-.081.039-.044c.058-.065.125-.138.188-.202Z" />
+                    </svg>
+                </span>
+                <span class="text-orange-500">برند آیفون</span>
+                <span class="text-blue-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="10" fill="none">
+                        <path stroke="#222F5D"
+                            d="m.945 4.2.006-.006.006-.007c.369-.406 1.067-.973 1.831-1.502.763-.53 1.537-.984 2.042-1.187l.01-.004c.067-.029.2-.079.341-.123a1.72 1.72 0 0 1 .3-.071c.13.002.253.031.375.092a.812.812 0 0 1 .33.377c.02.056.057.198.093.363a11.189 11.189 0 0 1 .054.253l.006.034c.1.558.161 1.502.161 2.575 0 1-.057 1.899-.14 2.48a1.34 1.34 0 0 0-.007.034l-.018.087v.002c-.013.07-.031.159-.052.254a4.92 4.92 0 0 1-.099.382.671.671 0 0 1-.012.033l-.004.01a.75.75 0 0 1-.66.424H5.48a.983.983 0 0 1-.155-.031 3.398 3.398 0 0 1-.36-.12l-.226-.095c-.482-.206-1.233-.646-1.978-1.16-.746-.516-1.436-1.07-1.814-1.491L.94 5.794l-.008-.008-.001-.001-.007-.007L.9 5.752a5.486 5.486 0 0 1-.084-.09 2.22 2.22 0 0 1-.164-.195l-.006-.008L.64 5.45a.749.749 0 0 1-.14-.446c0-.185.053-.348.144-.478l.074-.081.039-.044c.058-.065.125-.138.188-.202Z" />
+                    </svg>
+                </span>
+                <span class="text-gray-500">آیفون ۱۳</span>
+            </div>
+        </div>
+        <!-----------products ------------>
+        <div class="col-span-12 md:col-span-8 lg:col-span-9">
+            <div class="flex flex-col lg:flex-row md:bg-white rounded-xl px-2 md:px-4 py-5 mb-4">
+                <div class="flex flex-col items-center mb-4 lg:flex-row md:items-start w-full">
+                    <!--------product image-------->
+                    <div class="mb-10 max-w-[250px]">
+                        <img class="mb-4 w-full" src="../assets/images/iphone.png" alt="">
+                        <div class="lg:flex items-center gap-x-3 justify-between hidden">
+                            <div class="p-2 border-2 rounded-lg cursor-pointer border-gray-300">
+                                <img class="w-full h-auto" src="../assets/images/iphone.png" alt="">
+                            </div>
+                            <div class="p-2 border-2 rounded-lg cursor-pointer border-gray-300">
+                                <img class="w-full h-auto" src="../assets/images/iphone.png" alt="">
+                            </div>
+                            <div class="p-2 border-2 rounded-lg cursor-pointer border-gray-300">
+                                <img class="w-full h-auto" src="../assets/images/iphone.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-------product description -->
+                    <div class="lg:mr-8 w-full">
+                        <!---------product title-------->
+                        <div class="items-center gap-x-3 text-orange-500 mb-5 hidden lg:flex">
+                            <div class="flex items-center gap-x-1">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="none">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="1.125"
+                                            d="M13 12.75v7.5c0 3-.75 3.75-3.75 3.75h-4.5c-3 0-3.75-.75-3.75-3.75v-7.5C1 9.75 1.75 9 4.75 9h4.5c3 0 3.75.75 3.75 3.75ZM8.5 11.625h-3" />
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="1.125"
+                                            d="M7 21.825A1.163 1.163 0 1 0 7 19.5a1.163 1.163 0 0 0 0 2.325Z" />
+                                        <circle cx="10.5" cy="9.5" r="9.5" fill="#FFCBCB" fill-opacity=".28" />
+                                    </svg>
+                                </span>
+                                <span>تلفن همراه</span>
+                            </div>
+                            <span>اپل</span>
+                        </div>
+                        <div class="mb-6 text-center md:text-right">
+                            <h1 class="text-blue-900 mb-1 md:mb-2 font-bold text-lg md:text-2xl">گوشی آیفون ۱۳ ۱۲۸
+                                گیگابایت</h1>
+                            <h2 class="text-gray-400 font-thin md:text-lg">Apple Iphone 13 128 GB</h2>
+                        </div>
+                        <hr class="mb-6 hidden lg:block">
+                        <!----------product colors------->
+                        <div class="flex items-center w-full justify-around mb-5 md:justify-start">
+                            <p class="text-blue-900 md:text-lg">انتخاب رنگ:</p>
+                            <div class="flex items-center mr-6" x-data="{selectedColor:1}">
+                                <div @click="selectedColor=1"
+                                    :class="selectedColor===1 ? 'ring-2 ring-yellow-500' : '' "
+                                    class=" cursor-pointer border-white border-2 rounded-full flex items-center justify-between  w-6 h-6 bg-yellow-400">
+                                    <svg x-show="selectedColor===1" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="w-5 h-5 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+
+                                </div>
+                                <div @click="selectedColor=2"
+                                    :class="selectedColor===2 ? 'ring-2 ring-indigo-600' : '' "
+                                    class=" cursor-pointer border-white border-2 rounded-full flex items-center justify-between -mr-1.5 w-6 h-6 bg-indigo-600">
+                                    <svg x-show="selectedColor===2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="w-5 h-5 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+
+                                </div>
+                                <div @click="selectedColor=3"
+                                    :class="selectedColor===3 ? 'ring-2 ring-orange-400' : '' "
+                                    class=" cursor-pointer border-white border-2 rounded-full flex items-center justify-between -mr-1.5 w-6 h-6 bg-orange-300">
+                                    <svg x-show="selectedColor===3" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="w-5 h-5 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+
+                                </div>
+                                <div @click="selectedColor=4"
+                                    :class="selectedColor===4 ? 'ring-2 ring-orange-500' : '' "
+                                    class=" cursor-pointer border-white border-2 rounded-full flex items-center justify-between -mr-1.5 w-6 h-6  bg-orange-400">
+                                    <svg x-show="selectedColor===4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="w-5 h-5 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+
+                                </div>
+                                <div @click="selectedColor=5" :class="selectedColor===5 ? 'ring-2 ring-gray-500' : '' "
+                                    class=" cursor-pointer border-white border-2 rounded-full flex items-center justify-between -mr-1.5 w-6 h-6 bg-gray-400">
+                                    <svg x-show="selectedColor===5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="w-5 h-5 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!------------seller details in mobile-------->
+                        <div
+                            class="flex lg:hidden items-center flex-wrap gap-4 text-blue-900 text-sm px-4 md:px-0 lg:p-0 mb-6">
+                            <div class="flex items-center gap-x-2 flex-auto">
+                                <div class="flex items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 stroke-blue-900"
+                                            fill="none">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".875"
+                                                d="M1.756 6.545v2.62c0 2.618 1.05 3.668 3.669 3.668h3.144c2.62 0 3.67-1.05 3.67-3.669v-2.62" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".875"
+                                                d="M7 7c1.068 0 1.855-.87 1.75-1.937l-.385-3.897H5.641l-.39 3.897C5.144 6.13 5.932 6.999 7 6.999Z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".875"
+                                                d="M10.681 7c1.178 0 2.042-.957 1.925-2.13l-.163-1.604c-.21-1.517-.794-2.1-2.322-2.1h-1.78l.41 4.09c.098.962.967 1.743 1.93 1.743ZM3.29 7c.963 0 1.832-.782 1.925-1.745l.128-1.289.28-2.8H3.844c-1.528 0-2.111.583-2.321 2.1L1.365 4.87C1.248 6.043 2.112 7 3.29 7ZM7 9.916c-.974 0-1.458.484-1.458 1.458v1.459h2.917v-1.459c0-.974-.485-1.458-1.459-1.458Z" />
+                                        </svg>
+                                    </span>
+                                    <span class="mr-1">فروشنده:</span>
+                                </div>
+                                <div class="font-light text-xs">دیجی‌تایز</div>
+                            </div>
+
+                            <div class="flex items-center gap-x-2 flex-auto">
+                                <div class="flex items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 stroke-blue-900"
+                                            fill="none">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.063"
+                                                d="M7.43 1.58 3.897 2.91c-.815.305-1.48 1.268-1.48 2.132v5.263c0 .836.552 1.934 1.225 2.437l3.046 2.274c.999.75 2.642.75 3.64 0l3.046-2.274c.673-.503 1.226-1.6 1.226-2.437V5.043c0-.87-.666-1.834-1.48-2.139L9.583 1.58c-.602-.22-1.566-.22-2.153 0Z" />
+                                        </svg>
+                                    </span>
+                                    <span class="mr-1">گارانتی:</span>
+                                </div>
+                                <div class="font-light text-xs">۱۸ ماه زرین خدمت</div>
+                            </div>
+                            <div class="flex items-center gap-x-2 w-full">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 stroke-blue-900" fill="none">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.125"
+                                            d="M10 1.333V8c0 .733-.6 1.333-1.333 1.333H1.334V5.08a2.6 2.6 0 0 0 2.06.92 2.562 2.562 0 0 0 1.733-.707c.207-.173.38-.393.513-.633.24-.407.373-.887.36-1.387a2.655 2.655 0 0 0-.906-1.94H10Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.125"
+                                            d="M14.667 9.333v2c0 1.107-.893 2-2 2H12C12 12.6 11.4 12 10.667 12s-1.333.6-1.333 1.333H6.667c0-.733-.6-1.333-1.333-1.333C4.6 12 4 12.6 4 13.333h-.667c-1.106 0-2-.893-2-2v-2h7.334C9.4 9.333 10 8.733 10 8V3.333h1.227c.48 0 .92.26 1.16.673L13.527 6h-.86C12.3 6 12 6.3 12 6.666v2c0 .367.3.667.667.667h2Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.125"
+                                            d="M5.333 14.667a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667ZM10.667 14.667a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667ZM14.667 8v1.333h-2A.669.669 0 0 1 12 8.667v-2c0-.367.3-.667.667-.667h.86l1.14 2Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                            stroke-width="1.125"
+                                            d="M6 3.333c0 .8-.353 1.513-.906 2A2.666 2.666 0 1 1 3.334.666 2.666 2.666 0 0 1 6 3.333Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                            stroke-width="1.125" d="M3.5 2.499v1l-.833.5" />
+                                    </svg>
+                                    </span>
+                                    <span class="mr-1">ارسال توسط:</span>
+                                </div>
+                                <div class="font-light text-xs">انبار تهران</div>
+                            </div>
+                        </div>
+                        <!----------product properties------->
+                        <div class="bg-white md:bg-none p-4 md:p-0 rounded-lg text-blue-900 w-full text-sm">
+                            <h2 class="mb-3 md:text-lg">ویژگی های کالا</h2>
+                            <div class="flex flex-col gap-y-1">
+                                <div class="flex flex-col gap-y-1">
+                                    <div class="flex items-center gap-x-1">
+                                        <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                                        <span class="font-thin md:text-lg">حافظه ی داخلی:</span>
+                                    </div>
+                                    <span class="mr-3 md:text-lg">128 گیگابایت</span>
+                                </div>
+                                <div class="flex flex-col gap-y-1">
+                                    <div class="flex items-center gap-x-1">
+                                        <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                                        <span class="font-thin md:text-lg">بازه اندازه صفحه نمایش:</span>
+                                    </div>
+                                    <span class="mr-3 md:text-lg">0.6اینچ و بزرگتر</span>
+                                </div>
+                                <div class="flex flex-col gap-y-1">
+                                    <div class="flex items-center gap-x-1">
+                                        <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                                        <span class="font-thin md:text-lg">شبکه های ارتباطی:</span>
+                                    </div>
+                                    <span class="mr-3 md:text-lg">2G 3G 4G 5G</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--------seller details in desktop-------->
+                <div class="w-1/3 hidden lg:block">
+                    <div class="bg-gray-100 rounded-lg p-4">
+                        <div class="flex items-start flex-col text-blue-900 text-sm gap-y-2 mb-10 ">
+                            <div class="flex items-center gap-x-2">
+                                <div class="flex items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 stroke-blue-900"
+                                            fill="none">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".875"
+                                                d="M1.756 6.545v2.62c0 2.618 1.05 3.668 3.669 3.668h3.144c2.62 0 3.67-1.05 3.67-3.669v-2.62" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".875"
+                                                d="M7 7c1.068 0 1.855-.87 1.75-1.937l-.385-3.897H5.641l-.39 3.897C5.144 6.13 5.932 6.999 7 6.999Z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".875"
+                                                d="M10.681 7c1.178 0 2.042-.957 1.925-2.13l-.163-1.604c-.21-1.517-.794-2.1-2.322-2.1h-1.78l.41 4.09c.098.962.967 1.743 1.93 1.743ZM3.29 7c.963 0 1.832-.782 1.925-1.745l.128-1.289.28-2.8H3.844c-1.528 0-2.111.583-2.321 2.1L1.365 4.87C1.248 6.043 2.112 7 3.29 7ZM7 9.916c-.974 0-1.458.484-1.458 1.458v1.459h2.917v-1.459c0-.974-.485-1.458-1.459-1.458Z" />
+                                        </svg>
+                                    </span>
+                                    <span class="mr-1 xl:text-base">فروشنده:</span>
+                                </div>
+                                <div class="font-light text-xs xl:text-base">دیجی‌تایز</div>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <div class="flex items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 stroke-blue-900"
+                                            fill="none">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.063"
+                                                d="M7.43 1.58 3.897 2.91c-.815.305-1.48 1.268-1.48 2.132v5.263c0 .836.552 1.934 1.225 2.437l3.046 2.274c.999.75 2.642.75 3.64 0l3.046-2.274c.673-.503 1.226-1.6 1.226-2.437V5.043c0-.87-.666-1.834-1.48-2.139L9.583 1.58c-.602-.22-1.566-.22-2.153 0Z" />
+                                        </svg>
+                                    </span>
+                                    <span class="mr-1 xl:text-base">گارانتی:</span>
+                                </div>
+                                <div class="font-light text-xs xl:text-base">۱۸ ماه زرین خدمت</div>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 stroke-blue-900" fill="none">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.125"
+                                            d="M10 1.333V8c0 .733-.6 1.333-1.333 1.333H1.334V5.08a2.6 2.6 0 0 0 2.06.92 2.562 2.562 0 0 0 1.733-.707c.207-.173.38-.393.513-.633.24-.407.373-.887.36-1.387a2.655 2.655 0 0 0-.906-1.94H10Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.125"
+                                            d="M14.667 9.333v2c0 1.107-.893 2-2 2H12C12 12.6 11.4 12 10.667 12s-1.333.6-1.333 1.333H6.667c0-.733-.6-1.333-1.333-1.333C4.6 12 4 12.6 4 13.333h-.667c-1.106 0-2-.893-2-2v-2h7.334C9.4 9.333 10 8.733 10 8V3.333h1.227c.48 0 .92.26 1.16.673L13.527 6h-.86C12.3 6 12 6.3 12 6.666v2c0 .367.3.667.667.667h2Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.125"
+                                            d="M5.333 14.667a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667ZM10.667 14.667a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667ZM14.667 8v1.333h-2A.669.669 0 0 1 12 8.667v-2c0-.367.3-.667.667-.667h.86l1.14 2Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                            stroke-width="1.125"
+                                            d="M6 3.333c0 .8-.353 1.513-.906 2A2.666 2.666 0 1 1 3.334.666 2.666 2.666 0 0 1 6 3.333Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                            stroke-width="1.125" d="M3.5 2.499v1l-.833.5" />
+                                    </svg>
+                                    </span>
+                                    <span class="mr-1 xl:text-base">ارسال توسط:</span>
+                                </div>
+                                <div class="font-light text-xs xl:text-base">انبار تهران</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-center mb-2 font-bold text-orange-500 xl:text-xl">39.250.000تومان
+                            </h2>
+                            <button
+                                class="w-full bg-orange-500 text-white py-3 rounded-md cursor-pointer xl:text-lg">اضافه
+                                به سبد
+                                خرید</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--------Reviews of this product-------->
+            <div class="px-2 md:px-0">
+                <div class="bg-white rounded-xl p-4 text-blue-900 text-sm flex flex-col mb-4">
+                    <div>
+                        <h2 class="my-3 md:text-xl">نقد و بررسی این محصول</h2>
+                        <p class="font-thin md:text-lg">آیفون ۱۳ از سری پرچمداران ۲۰۲۱ اپل با قابلیت های فراوان است که
+                            در
+                            تاریخ ۱۴
+                            سپتامبر به صورت رسمی
+                            رونمایی شد و پس از گذشت
+                            مدتی در تاریخ ۲۴ سپتامبر به بازارهای جهانی راه یافت و توانست بسیاری از طرفداران برند اپل را
+                            به
+                            خرید متقاعد سازد. طراحی
+                            iPhone 13 Pro مشابه سری پیشین با تغییراتی جزئی است که در رنگ های زیبای آبی، مشکی گرافیت،
+                            طلایی و
+                            نقره ای عرضه شده است...</p>
+                        <div class="text-left">
+                            <button
+                                class="py-2 px-3 rounded-md cursor-pointer text-ora5ge-600 hover:bg-orange-200 hover:text-white">ادامه
+                                مطلب</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-4 text-blue-900 text-sm flex flex-col">
+                    <div x-data="{activeButton:1,activeClass:'bg-white rounded-2xl shadow-lg text-blue-800'}">
+                        <div class="flex flex-row bg-gray-100 rounded-3xl mb-4">
+                            <button @click="activeButton=1" :class="activeButton===1 ? activeClass : '' "
+                                class="p-2 cursor-pointer text-gray-400 w-full md:text-xl">دوربین</button>
+                            <button @click="activeButton=2" :class="activeButton===2 ? activeClass : '' "
+                                class="p-2 cursor-pointer text-gray-400 w-full md:text-xl">طراحی</button>
+                            <button @click="activeButton=3" :class="activeButton===3 ? activeClass : '' "
+                                class="p-2 cursor-pointer text-gray-400 w-full md:text-xl">باتری</button>
+                        </div>
+
+                        <div x-show="activeButton===1">
+                            <h2 class="my-3 md:text-xl">دوربین</h2>
+                            <h1 class="font-thin md:text-lg">کمپانی اپل پس از معرفی سری آیفون ۱۲ بار دیگر طراحی گوشی های
+                                خود، با فریم
+                                های پهن و زاویه دار
+                                را
+                                مورد استفاده قرار داد.
+                                آیفون ۱۳ پرو نیز به پیروی از نسل پیشین خود با یک طراحی بسیار جذاب رونمایی و عرضه شد. پنل
+                                پشتی و
+                                نمایشگر این گوشی مانند
+                                تمامی گوشی های بالارده با استفاده از شیشه ساخته شده که با یک لایه محافظ پوشیده شده است؛
+                                در
+                                قسمت
+                                پشتی شاهد یک ماژول مربعی
+                                شکل هستیم که دوربین اصلی را تشکیل می دهد و به علت طراحی خاصی که دارد این مدل را نسبت به
+                                همرده
+                                های خود در بین محصولات
+                                سایر کمپانی ها متفاوت ساخته است همچنین فریم آلومینیومی در نظر گرفته شده برای آن نیز
+                                درخشش
+                                خاصی
+                                را ایجاد کرده که بی نظیر
+                                است. رنگ های بسیار خاص در نظر گرفته شده برای iPhone 13 Pro در کنار طراحی منحصر به فرد یک
+                                پرچمدار
+                                بی همتا را به دنیای
+                                تکنولوژی عرضه کرده که نگاه هر بیننده ای را متوجه خود می سازد.</h1>
+                        </div>
+                        <div x-show="activeButton===2">
+                            <h2 class="my-3 md:text-xl">طراحی</h2>
+                            <h1 class="font-thin md:text-lg">کیفیت بسیار بالای دوربین در گوشی های آیفون همواره در بین
+                                کاربران علاقه مند
+                                به دنیای تکنولوژی
+                                زبانزد بوده است. iPhone 13
+                                Pro نیز با دوربین اصلی چهارگانه خود و بهره مندی از قابلیت سینماتیک توانسته است بسیار
+                                محبوب
+                                واقع شود. دوربین اصلی در نظر
+                                گرفته شده برای این مدل به ترتیب از یک لنز عریض ۱۲ مگاپیکسلی با دریچه دیافراگم f/1.5، لنز
+                                تله
+                                فوتو ۱۲ مگاپیکسلی با دریچه
+                                دیافراگم f/2.8، لنز ۱۲ مگاپیکسلی فوق عریض با دریچه دیافراگم f/1.8 و یک سنسور TOF 3D
+                                LiDAR
+                                تشکیل شده است که قابلیت های
+                                ویژه ای را به آیفون ۱۳ پرو بخشیده اند. در قسمت جلو نیز درون ناچ تعبیه شده در بالای
+                                نمایشگر
+                                یک لنز ۱۲ مگاپیکسلی عریض و یک
+                                سنسور عمق و تشخیص چهره از نوع SL 3D تعبیه شده که امکانات منحصر به فردی را در هنگام عکس
+                                برداری و فیلم برداری در اختیار
+                                کاربر قرار می دهد.</h1>
+                        </div>
+                        <div x-show="activeButton===3">
+                            <h2 class="my-3 md:text-xl">باتری</h2>
+                            <h1 class="font-thin md:text-lg">در بین هواداران گوشی های آیفون همیشه دغدغه باتری و ظرفیت
+                                پایین
+                                آن وجود
+                                داشته است. آیفون ۱۳
+                                پرو با باتری قدرتمند 3095
+                                میلی آمپری توانسته است دغدغه های کاربران را به خوبی رفع کند. این گوشی دارای قابلیت شارژ
+                                سریع
+                                ۲۳ وات است که این اطمینان
+                                را به کاربر می دهد که انرژی دستگاه را در کوتاه ترین زمان ممکن مجددا بازیابی خواهد شد.
+                                البته
+                                قابلیت شارژ بی سیم ۱۵ وات با
+                                استفاده از مگ سیف نیز از دیگر ویژگی های iPhone 13 Pro محسوب می شوند.</h1>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------fixed add to cart button -------->
+    <div
+        class="lg:hidden bg-white p-4 rounded-t-md shadow-[0_-4px_8px_0px_rgba(0,0,0,0.1)] sticky right-0 left-0 bottom-0 flex items-center justify-between">
+        <button class="flex-1 bg-orange-500 text-white p-3 rounded-md cursor-pointer">اضافه به سبد خرید</button>
+        <div class="flex flex-1 items-end flex-col text-blue-900">
+            <span class="font-bold">39.250.000</span>
+            <span class="font-thin ">تومان</span>
+        </div>
+    </div>
+</body>
+
+</html>
